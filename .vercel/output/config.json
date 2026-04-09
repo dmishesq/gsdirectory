@@ -1,0 +1,364 @@
+{
+  "version": 3,
+  "routes": [
+    {
+      "src": "/_next/__private/trace",
+      "dest": "/404",
+      "status": 404,
+      "continue": true
+    },
+    {
+      "src": "/404/?",
+      "status": 404,
+      "continue": true
+    },
+    {
+      "src": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/]+\\.\\w+))/$",
+      "headers": {
+        "Location": "/$1"
+      },
+      "status": 308,
+      "missing": [
+        {
+          "type": "header",
+          "key": "x-nextjs-data"
+        }
+      ]
+    },
+    {
+      "src": "^(?:/((?!\\.well-known(?:/.*)?)(?:[^/]+/)*[^/\\.]+))$",
+      "headers": {
+        "Location": "/$1/"
+      },
+      "status": 308
+    },
+    {
+      "handle": "filesystem"
+    },
+    {
+      "src": "/_next/data/(.*)",
+      "dest": "/_next/data/$1",
+      "check": true
+    },
+    {
+      "src": "/_next/data/(.*)",
+      "status": 404
+    },
+    {
+      "handle": "resource"
+    },
+    {
+      "src": "/.*",
+      "status": 404
+    },
+    {
+      "handle": "miss"
+    },
+    {
+      "src": "/_next/static/.+",
+      "status": 404,
+      "check": true,
+      "dest": "/_next/static/not-found.txt",
+      "headers": {
+        "content-type": "text/plain; charset=utf-8"
+      }
+    },
+    {
+      "handle": "hit"
+    },
+    {
+      "src": "/_next/static/(?:[^/]+/pages|pages|chunks|runtime|css|image|media|EuR_1IdTx6ArZlePFhqnx)/.+",
+      "headers": {
+        "cache-control": "public,max-age=31536000,immutable"
+      },
+      "continue": true,
+      "important": true
+    },
+    {
+      "handle": "error"
+    },
+    {
+      "status": 404,
+      "src": ".*",
+      "dest": "/404"
+    }
+  ],
+  "overrides": {
+    "404.html": {
+      "path": "404",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "404/index.html": {
+      "path": "404/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "about/index.html": {
+      "path": "about/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/bankruptcy-attorneys/index.html": {
+      "path": "categories/bankruptcy-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/bookkeepers/index.html": {
+      "path": "categories/bookkeepers/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/business-attorneys/index.html": {
+      "path": "categories/business-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/chiropractors/index.html": {
+      "path": "categories/chiropractors/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/cpas-accountants/index.html": {
+      "path": "categories/cpas-accountants/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/criminal-defense-attorneys/index.html": {
+      "path": "categories/criminal-defense-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/dentists/index.html": {
+      "path": "categories/dentists/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/estate-planning-attorneys/index.html": {
+      "path": "categories/estate-planning-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/family-law-attorneys/index.html": {
+      "path": "categories/family-law-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/financial-advisors/index.html": {
+      "path": "categories/financial-advisors/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/fitness-wellness/index.html": {
+      "path": "categories/fitness-wellness/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/home-services/index.html": {
+      "path": "categories/home-services/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/immigration-attorneys/index.html": {
+      "path": "categories/immigration-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/index.html": {
+      "path": "categories/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/insurance-agents/index.html": {
+      "path": "categories/insurance-agents/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/marketing-agencies/index.html": {
+      "path": "categories/marketing-agencies/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/personal-injury-attorneys/index.html": {
+      "path": "categories/personal-injury-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/real-estate-agents/index.html": {
+      "path": "categories/real-estate-agents/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/restaurants/index.html": {
+      "path": "categories/restaurants/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/tax-attorneys/index.html": {
+      "path": "categories/tax-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "categories/web-developers/index.html": {
+      "path": "categories/web-developers/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "faq/index.html": {
+      "path": "faq/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "index.html": {
+      "path": "index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/american-tax-lawyer/index.html": {
+      "path": "listing/american-tax-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/attorney-tax-help/index.html": {
+      "path": "listing/attorney-tax-help/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/brightline-marketing/index.html": {
+      "path": "listing/brightline-marketing/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/coastal-web/index.html": {
+      "path": "listing/coastal-web/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/crypto-irs-help/index.html": {
+      "path": "listing/crypto-irs-help/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/get-crypto-tax-help/index.html": {
+      "path": "listing/get-crypto-tax-help/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/get-irs-help-biz/index.html": {
+      "path": "listing/get-irs-help-biz/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/get-irs-help-net/index.html": {
+      "path": "listing/get-irs-help-net/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/get-irs-help-org/index.html": {
+      "path": "listing/get-irs-help-org/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/get-irs-help-us/index.html": {
+      "path": "listing/get-irs-help-us/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/gulf-coast-financial/index.html": {
+      "path": "listing/gulf-coast-financial/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/heritage-estate/index.html": {
+      "path": "listing/heritage-estate/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/i-didnt-pay-my-taxes/index.html": {
+      "path": "listing/i-didnt-pay-my-taxes/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-help-insider/index.html": {
+      "path": "listing/irs-help-insider/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-help-lawyer/index.html": {
+      "path": "listing/irs-help-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-problem-lawyer/index.html": {
+      "path": "listing/irs-problem-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-probs/index.html": {
+      "path": "listing/irs-probs/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solution-attorney/index.html": {
+      "path": "listing/irs-solution-attorney/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solution-attorneys/index.html": {
+      "path": "listing/irs-solution-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solution-guy/index.html": {
+      "path": "listing/irs-solution-guy/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solution-lawyer/index.html": {
+      "path": "listing/irs-solution-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solution-lawyers/index.html": {
+      "path": "listing/irs-solution-lawyers/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solutions-attorney/index.html": {
+      "path": "listing/irs-solutions-attorney/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solutions-attorneys/index.html": {
+      "path": "listing/irs-solutions-attorneys/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solutions-guy/index.html": {
+      "path": "listing/irs-solutions-guy/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solutions-lawyer/index.html": {
+      "path": "listing/irs-solutions-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/irs-solutions-lawyers/index.html": {
+      "path": "listing/irs-solutions-lawyers/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/law-offices-darrin-t-mish/index.html": {
+      "path": "listing/law-offices-darrin-t-mish/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/lawyer-tax-help/index.html": {
+      "path": "listing/lawyer-tax-help/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/pinnacle-bookkeeping/index.html": {
+      "path": "listing/pinnacle-bookkeeping/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/sarasota-tax-attorney/index.html": {
+      "path": "listing/sarasota-tax-attorney/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/st-petersburg-tax-lawyer/index.html": {
+      "path": "listing/st-petersburg-tax-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/summit-bankruptcy/index.html": {
+      "path": "listing/summit-bankruptcy/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/suncoast-realty/index.html": {
+      "path": "listing/suncoast-realty/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/tampa-bay-cpa-group/index.html": {
+      "path": "listing/tampa-bay-cpa-group/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/tampa-irs-attorney/index.html": {
+      "path": "listing/tampa-irs-attorney/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/tampa-irs-lawyer/index.html": {
+      "path": "listing/tampa-irs-lawyer/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/tax-attorney-dallas-texas/index.html": {
+      "path": "listing/tax-attorney-dallas-texas/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/tax-attorneys-4u/index.html": {
+      "path": "listing/tax-attorneys-4u/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/the-irs-team/index.html": {
+      "path": "listing/the-irs-team/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "listing/the-tax-attorney/index.html": {
+      "path": "listing/the-tax-attorney/index",
+      "contentType": "text/html; charset=utf-8"
+    },
+    "submit/index.html": {
+      "path": "submit/index",
+      "contentType": "text/html; charset=utf-8"
+    }
+  },
+  "framework": {
+    "version": "14.2.35"
+  },
+  "crons": []
+}

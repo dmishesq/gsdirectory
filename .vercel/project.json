@@ -1,1 +1,16 @@
-{"projectId":"prj_btIObnqrqz5igzymAxLF7QGIZwXo","orgId":"team_fffzkhHrxowXIEh0RY03ocUM","projectName":"gsdirectory"}
+{
+  "projectId": "prj_btIObnqrqz5igzymAxLF7QGIZwXo",
+  "orgId": "team_fffzkhHrxowXIEh0RY03ocUM",
+  "projectName": "gsdirectory",
+  "settings": {
+    "createdAt": 1775762188724,
+    "framework": "nextjs",
+    "devCommand": null,
+    "installCommand": null,
+    "buildCommand": null,
+    "outputDirectory": null,
+    "rootDirectory": null,
+    "directoryListing": false,
+    "nodeVersion": "24.x"
+  }
+}
