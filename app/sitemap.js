@@ -7,7 +7,6 @@ export default function sitemap() {
     { url: base+'/categories/', lastModified: now, changeFrequency: 'daily', priority: 0.9 },
     { url: base+'/submit/', lastModified: now, changeFrequency: 'monthly', priority: 0.8 },
     { url: base+'/about/', lastModified: now, changeFrequency: 'monthly', priority: 0.5 },
-    { url: base+'/blog/', lastModified: now, changeFrequency: 'weekly', priority: 0.7 },
   ]
   categories.forEach(c => { pages.push({ url: base+'/categories/'+c.slug+'/', lastModified: now, changeFrequency: 'daily', priority: 0.8 }) })
   listings.forEach(l => { pages.push({ url: base+'/listing/'+l.slug+'/', lastModified: now, changeFrequency: 'weekly', priority: 0.7 }) })
