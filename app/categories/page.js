@@ -1,0 +1,6 @@
+import { getCategoriesWithCounts } from '@/data/directory'
+export const metadata = { title: 'All Business Categories', description: 'Browse all business categories in the GS Directory.' }
+export default function CategoriesPage() {
+  const cats = getCategoriesWithCounts()
+  return (<><section className="bg-gray-50 py-12 border-b border-gray-100"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><h1 className="text-3xl md:text-4xl font-display text-brand-950 mb-2">All Categories</h1><p className="text-gray-500">Browse {cats.length} business categories</p></div></section><section className="py-12"><div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8"><div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">{cats.map(cat=>(<a key={cat.slug} href={'/categories/'+cat.slug+'/'} className="card-hover bg-white rounded-xl border border-gray-200 p-6"><div className="flex items-center gap-3 mb-3"><span className="text-2xl" dangerouslySetInnerHTML={{__html:cat.icon}}/><h2 className="font-display text-xl text-brand-900">{cat.name}</h2></div><p className="text-sm text-gray-600 mb-3">{cat.description}</p><p className="text-xs text-brand-600 font-semibold">{cat.count} listing{cat.count!==1?'s':''}</p></a>))}</div></div></section></>)
+}

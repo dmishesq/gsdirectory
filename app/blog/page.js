@@ -1,0 +1,11 @@
+export const metadata = { title: 'Blog - Business Directory Insights', description: 'Tips and resources for growing your business online.' }
+const posts = [
+  { slug:'why-business-directories-still-matter', title:'Why Business Directories Still Matter for SEO in 2026', excerpt:'Quality directory listings remain valuable for SEO. Here is why they still work.', date:'April 9, 2026', category:'SEO' },
+  { slug:'write-listing-that-converts', title:'How to Write a Business Listing That Converts', excerpt:'Your listing is the first impression. Learn to write descriptions that convert.', date:'April 8, 2026', category:'Marketing' },
+  { slug:'dofollow-vs-nofollow', title:'Dofollow vs Nofollow Backlinks Explained', excerpt:'Not all backlinks are equal. Understanding the difference is essential for SEO.', date:'April 7, 2026', category:'SEO' },
+  { slug:'build-online-authority', title:'Top 10 Ways Small Businesses Build Online Authority', excerpt:'Building domain authority does not require a massive budget.', date:'April 6, 2026', category:'Strategy' },
+  { slug:'local-seo-guide', title:'The Complete Local SEO Guide for Service Businesses', excerpt:'Local SEO is the fastest path to new customers for service businesses.', date:'April 5, 2026', category:'Local SEO' },
+]
+export default function BlogPage() {
+  return (<><section className="bg-gray-50 py-12 border-b border-gray-100"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8"><h1 className="text-3xl md:text-4xl font-display text-brand-950 mb-2">Blog</h1><p className="text-gray-500">Insights on SEO, directory marketing, and growing your business</p></div></section><section className="py-12"><div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 space-y-8">{posts.map(post=>(<article key={post.slug} className="card-hover bg-white rounded-xl border border-gray-200 p-8"><div className="flex items-center gap-3 mb-3"><span className="text-xs font-semibold text-brand-600 bg-brand-50 px-2.5 py-1 rounded">{post.category}</span><span className="text-xs text-gray-400">{post.date}</span></div><h2 className="font-display text-xl md:text-2xl text-brand-950 mb-2">{post.title}</h2><p className="text-sm text-gray-600">{post.excerpt}</p></article>))}</div></section></>)
+}

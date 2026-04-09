@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+@import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap');
+html { scroll-behavior: smooth; }
+body { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; }
+h1, h2, h3, h4 { font-family: 'DM Serif Display', Georgia, serif; }
+.hero-gradient { background: linear-gradient(135deg, #072a49 0%, #0b426e 40%, #015da0 100%); }
+.card-hover { transition: transform 0.2s ease, box-shadow 0.2s ease; }
+.card-hover:hover { transform: translateY(-2px); box-shadow: 0 8px 24px rgba(7,42,73,0.12); }
+.listing-badge { background: linear-gradient(135deg, #f59e0b, #d97706); color: white; font-size: 0.7rem; font-weight: 700; padding: 2px 8px; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+.category-card { border: 1px solid #e5e7eb; border-radius: 12px; padding: 24px; transition: all 0.2s ease; }
+.category-card:hover { border-color: #0c93e7; background: #f0f7ff; }
+.submit-form input, .submit-form textarea, .submit-form select { width: 100%; padding: 10px 14px; border: 1px solid #d1d5db; border-radius: 8px; font-size: 0.95rem; transition: border-color 0.2s; }
+.submit-form input:focus, .submit-form textarea:focus, .submit-form select:focus { outline: none; border-color: #0c93e7; box-shadow: 0 0 0 3px rgba(12,147,231,0.1); }
